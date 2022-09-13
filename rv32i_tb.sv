@@ -12,8 +12,6 @@ logic [31:0] ld;
 
 RV32I cpu (clk, reset_, inst, pc, addr, str, ld);
 
-
-
 always #10 clk = !clk;
 
 always_ff @ (posedge clk)
