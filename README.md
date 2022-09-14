@@ -2,9 +2,9 @@
 my basic RV32I core
 
 ### implements basic integer instructions
--shift
--arithmetic
--logic
+- shift
+- arithmetic
+- logic
 
 ### todo:
 - read instructions
