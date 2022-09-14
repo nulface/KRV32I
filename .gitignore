@@ -1,3 +1,5 @@
 .gitignore
 SIM
 notes exclude
+*.exe
+*.bat
