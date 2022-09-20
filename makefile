@@ -3,4 +3,6 @@ CXX = g++
 .PHONY: assemble
 
 assemble:
-	$(CXX) 
+	$(CXX) *.cpp -o assembler
+	./assembler.exe
+	#$(CXX) *.o
