@@ -1,2 +1,2 @@
-g++ *.cpp -o main
+g++ *.cpp -o assembler
 g++ *.o
