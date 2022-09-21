@@ -192,20 +192,17 @@ assign rs2 = instruction[24:20];
 			end
 
 
-
-
-			/*difference between jal and jalr???*/
 			JAL: //JAL
 			begin
 				$display("JAL instruction");
 				x[rd] 	<= PC + 4;
 				PC 		<= PC + imm_j;
-				//what if this tries to write to zero? this is a crash waiting to happen. the whole system would freeze.
+				//what if this tries to write to x0? this is a crash waiting to happen. the whole system would freeze.
 			end
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
-			JALR: //JAL
+			JALR: //JALR
 			begin
 				$display("JALR instruction");
 				x[rd] 	<= PC + 4;
