@@ -269,7 +269,7 @@ assign rs2 = instruction[24:20];
 					BGE:	 PC <= PC + (( rs1 >= rs2 ) ? imm_b : 4);
 					BLTU:	 PC <= PC + (( rs1 <  rs2 ) ? imm_b : 4);		/* supposed to be unsigned */
 					BGEU: 	 PC <= PC + (( rs1 >= rs2 ) ? imm_b : 4);		/* supposed to be unsigned */
-					default: PC <= PC; //? // this should never run. but what should it do, just in case? nop?
+					default: PC <= PC + 4; //? // this should never run. but what should it do, just in case? nop?
 	
 				endcase
 

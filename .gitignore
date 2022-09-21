@@ -1,4 +1,9 @@
 .gitignore
 SIM
 notes exclude
+<<<<<<< HEAD
 *.exe
+=======
+*.exe
+*.bat
+>>>>>>> be8572fdd93c2c2132e5b28cbaee4f52594ec6d0
