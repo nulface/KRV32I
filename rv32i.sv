@@ -231,13 +231,13 @@ assign rs2 = instruction[24:20];
 				case( func3 )
 					//what about the carry/borrow bit?!
 					ADDI:		x[rd] <=   x[rs1] +  imm_i;
-                    SLLI:       x[rd] <=   x[rs1] << shamt_i;
-                    SLTI:       x[rd] <= ( x[rs1] <  imm_i ) ? 1 : 0;
-                    SLTIU:      x[rd] <= ( x[rs1] <  imm_i ) ? 1 : 0;
-                    XORI:       x[rd] <=   x[rs1] ^  imm_i;
-                    SRLISRAI:   x[rd] <= ( b30 )  ?  x[rs1] >>> shamt_i: x[rs1] >> shamt_i;
-                    ORI:        x[rd] <=   x[rs1] |  imm_i;
-                    ANDI:       x[rd] <=   x[rs1] &  imm_i;
+					SLLI:       x[rd] <=   x[rs1] << shamt_i;
+					SLTI:       x[rd] <= ( x[rs1] <  imm_i ) ? 1 : 0;
+					SLTIU:      x[rd] <= ( x[rs1] <  imm_i ) ? 1 : 0;
+					XORI:       x[rd] <=   x[rs1] ^  imm_i;
+					SRLISRAI:   x[rd] <= ( b30 )  ?  x[rs1] >>> shamt_i: x[rs1] >> shamt_i;
+					ORI:        x[rd] <=   x[rs1] |  imm_i;
+					ANDI:       x[rd] <=   x[rs1] &  imm_i;
 
 				endcase
 
