@@ -125,7 +125,6 @@ wire [4:0] rs2;
 assign rs2 = instruction[24:20];
 
 
-	//this works but feels hacky
 	//writes to x0 should be discarded, meaning it is allowed... so I should simply overwrite x0	
 	always_ff @ (negedge CLK) x[0] <= 0;
 
@@ -137,13 +136,6 @@ assign rs2 = instruction[24:20];
 			$display("reset");
 			PC <= 0;
 			x <= {32{1'b0}};
-		
-
-		/*
-		else if(rd == 5'b0) begin
-		$display("Invalid instruction - Cannot write to x0");
-		PC <= PC + 4;
-		*/
 
 		end else begin case(opcode)
 
@@ -154,26 +146,26 @@ assign rs2 = instruction[24:20];
 			begin
 				$display("Store instruction");
 				PC <= PC + 4;
-			//	case( func3 )
-			//	LB:		x[rd]	=	
-            //  LH:		x[rd]	=	
-            //  LW:		x[rd]	=	
-            //  LBU:	x[rd]	=	
-            //  LHU:	x[rd]	=	
-			//	default:
-			//	endcase
+				//	case( func3 )
+				//	LB:		x[rd]	=	
+				//  LH:		x[rd]	=	
+				//  LW:		x[rd]	=	
+				//  LBU:	x[rd]	=	
+				//  LHU:	x[rd]	=	
+				//	default:
+				//	endcase
 			end
 
             STORE:
 			begin
 				$display("Store instruction");
 				PC <= PC + 4;
-			//	case( func3 )
-			//	SB:		
-            //  SH:		
-            //  SW:		
-			//	default:
-			//	endcase
+				//	case( func3 )
+				//	SB:		
+				//  SH:		
+				//  SW:		
+				//	default:
+				//	endcase
 			end
 
 			LUIcode: //LUI
@@ -200,8 +192,6 @@ assign rs2 = instruction[24:20];
 				//what if this tries to write to x0? this is a crash waiting to happen. the whole system would freeze.
 			end
 
-
-/////////////////////////////////////////////////////////////////////////////////////////
 			JALR: //JALR
 			begin
 				$display("JALR instruction");
