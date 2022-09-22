@@ -70,13 +70,13 @@ localparam SRLSRA		= 3'b101;
 localparam OR			= 3'b110;
 localparam AND			= 3'b111;
 	
-localparam ADDI     	= 3'b000;
-localparam SLLI     	= 3'b001;
-localparam SLTI     	= 3'b010;
-localparam SLTIU    	= 3'b011;
-localparam XORI     	= 3'b100;
-localparam SRLISRAI 	= 3'b101;
-localparam ORI      	= 3'b110;
+localparam ADDI			= 3'b000;
+localparam SLLI			= 3'b001;
+localparam SLTI			= 3'b010;
+localparam SLTIU		= 3'b011;
+localparam XORI			= 3'b100;
+localparam SRLISRAI		= 3'b101;
+localparam ORI			= 3'b110;
 localparam ANDI			= 3'b111;
 	
 localparam LB			= 3'b000;
