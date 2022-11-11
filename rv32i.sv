@@ -189,7 +189,6 @@ assign rs2 = instruction[24:20];
 				$display("JAL instruction");
 				x[rd] 	<= PC + 4;
 				PC 		<= PC + imm_j;
-				//what if this tries to write to x0? this is a crash waiting to happen. the whole system would freeze.
 			end
 
 			JALR: //JALR
@@ -197,7 +196,6 @@ assign rs2 = instruction[24:20];
 				$display("JALR instruction");
 				x[rd] 	<= PC + 4;
 				PC 		<= PC + imm_j;
-				//what if this tries to write to zero? this is a crash waiting to happen. the whole system would freeze.
 			end
 
 			rcode: //rd, rs1, rs2
@@ -256,7 +254,7 @@ assign rs2 = instruction[24:20];
 					BGE:	 PC <= PC + (( rs1 >= rs2 ) ? imm_b : 4);
 					BLTU:	 PC <= PC + (( rs1 <  rs2 ) ? imm_b : 4);		/* supposed to be unsigned */
 					BGEU: 	 PC <= PC + (( rs1 >= rs2 ) ? imm_b : 4);		/* supposed to be unsigned */
-					default: PC <= PC + 4; //? // this should never run. but what should it do, just in case? nop?
+					default: PC <= PC + 4; //? // this should never run.
 	
 				endcase
 
